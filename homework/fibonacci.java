@@ -1,6 +1,6 @@
-public class fibonacci {
+공개 class fibonacci {
 
-	public static void main(String[] args) {
+	공개 static void main(String[] args) {
 		
 		int i;
         int j = 1;
