@@ -119,7 +119,7 @@ public class golden_ratio {
 <img width="1336" height="929" alt="3번" src="https://github.com/user-attachments/assets/85c36b64-c775-47cf-bd35-7842f910422b" />
 
 
-'''java
+```java
 
 	public class x9x {
 
