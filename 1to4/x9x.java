@@ -1,6 +1,6 @@
-공개 class x9x {
+public class x9x {
 
-	공개 static void main(String[] args) {
+	public static void main(String[] args) {
 
 		int a, b;
 		
