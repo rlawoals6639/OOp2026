@@ -1,5 +1,3 @@
-package object_coding;
-
 public class pi {
 
 	public static void main(String[] args) {
