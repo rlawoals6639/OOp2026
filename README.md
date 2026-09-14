@@ -1,6 +1,6 @@
 <img width="1339" height="930" alt="5번" src="https://github.com/user-attachments/assets/4639ede8-2efc-41c8-84e9-32080dfea7f0" />
-'''java
 
+```java
 	public class hash_printing{
 	  public static void main(String []args){
 	    int i, j, k;
@@ -39,7 +39,9 @@
 	    }
 	  }
 	}
+
 '''
+
 
 <img width="1323" height="908" alt="1번" src="https://github.com/user-attachments/assets/2fc148ab-85d1-4fb4-b89e-1b6def9388d3" />
 
