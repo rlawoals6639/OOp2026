@@ -3,7 +3,7 @@
 
 '''java
 
-public class hash_printing{
+	public class hash_printing{
 	  public static void main(String []args){
 	    int i, j, k;
 	    for(i=0; i<10; i++) {
@@ -12,7 +12,7 @@ public class hash_printing{
 	      }
 	      System.out.println("");
 	    }
-	    
+		
 	    for(i=0; i<10; i++) {
 	      for(j=0; j<=i; j++) {
 	        System.out.print("#");
@@ -41,5 +41,5 @@ public class hash_printing{
 	    }
 	  }
 	}
-  '''
+'''
   
