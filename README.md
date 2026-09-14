@@ -47,7 +47,7 @@
 <img width="1323" height="908" alt="1번" src="https://github.com/user-attachments/assets/2fc148ab-85d1-4fb4-b89e-1b6def9388d3" />
 
 
-'''java
+```java
 
 	public class fibonacci {
 		public static void main(String[] args) {
@@ -66,13 +66,13 @@
 		}
 	}
 
-'''
+```
 
 <img width="1334" height="930" alt="2번" src="https://github.com/user-attachments/assets/f4f34fb0-a169-42f1-a260-ce816a17b565" />
 
 
 
-'''java
+```java
 
     public class golden_ratio {
 	
@@ -116,7 +116,7 @@
 	}
 
 
-'''
+```
 
 <img width="1334" height="933" alt="4번" src="https://github.com/user-attachments/assets/bf98d071-436d-43db-9007-dc57c04c2f8e" />
 
@@ -126,7 +126,7 @@ aaaaaaaaaaaaaaa
 
 
 
-'''java
+```java
 
 	public class pi {
 
@@ -149,12 +149,12 @@ aaaaaaaaaaaaaaa
     	}
 	}
 
-'''
+```
 
 <img width="1339" height="930" alt="5번" src="https://github.com/user-attachments/assets/2674d9d2-4282-4c3c-959a-128707902926" />
 
 
-'''java
+```java
 
 	public class binomial {
 
@@ -176,12 +176,12 @@ aaaaaaaaaaaaaaa
     	}
 	}
 
-'''
+```
 
 <img width="1337" height="934" alt="6번" src="https://github.com/user-attachments/assets/ce97b321-6238-4650-836b-9babdff09bfa" />
 
 
-'''java
+```java
 
 	public class grade {
 	
@@ -208,12 +208,12 @@ aaaaaaaaaaaaaaa
 	    }
 	}
 	
-'''
+```
 
 <img width="1338" height="926" alt="7번" src="https://github.com/user-attachments/assets/e329b106-9094-416a-b8c7-60b1fb55e449" />
 
 
-'''java
+```java
 	
 	public class sorting {
 	
@@ -243,7 +243,7 @@ aaaaaaaaaaaaaaa
 	    }
 	}
 
-'''
+```
 
 <img width="1341" height="932" alt="8번" src="https://github.com/user-attachments/assets/327db714-3b36-4c1b-8f46-f2f4c8d1120b" />
 
