@@ -1,13 +1,12 @@
-public class x9x {
+공개 class x9x {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		int i, j;
+	공개 static void main(String[] args) {
+
 		int a, b;
 		
-		for(i=1; i<=9; i++) {
+		for(int i=1; i<=9; i++) {
 			a = i;
-			for(j=1; j<=9; j++) {
+			for(int j=1; j<=9; j++) {
 				int x = i * j;
 				System.out.print(i + "*" + j + "=" + x + " ");
 			}
