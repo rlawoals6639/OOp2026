@@ -1,6 +1,7 @@
-<img width="1339" height="930" alt="5번" src="https://github.com/user-attachments/assets/4639ede8-2efc-41c8-84e9-32080dfea7f0" />
+###OOp2026
 
-```java
+'''java
+
 	public class hash_printing{
 	  public static void main(String []args){
 	    int i, j, k;
