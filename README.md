@@ -1,5 +1,8 @@
 ###OOp2026
 
+<details>
+  <summary>1번~4번</summary>
+
 ```java
 
 	public class hash_printing{
@@ -118,7 +121,13 @@ public class golden_ratio {
 
 <img width="1336" height="929" alt="3번" src="https://github.com/user-attachments/assets/85c36b64-c775-47cf-bd35-7842f910422b" />
 
+</details>
 
+
+
+<details>
+  <summary>5번~8번</summary>
+	
 ```java
 
 	public class x9x {
@@ -270,7 +279,7 @@ aaaaaaaaaaaaaaa
 
 <img width="1341" height="932" alt="8번" src="https://github.com/user-attachments/assets/327db714-3b36-4c1b-8f46-f2f4c8d1120b" />
 
-
+</details>
 
 
   
