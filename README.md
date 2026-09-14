@@ -1,6 +1,4 @@
-<img width="1334" height="930" alt="2번" src="https://github.com/user-attachments/assets/56dd0038-1aa3-4818-b6b4-ededdff8202a" /># OOp2026
-
-
+<img width="1339" height="930" alt="5번" src="https://github.com/user-attachments/assets/4639ede8-2efc-41c8-84e9-32080dfea7f0" />
 '''java
 
 	public class hash_printing{
@@ -97,11 +95,154 @@
 
 '''java
 
+	public class x9x {
+
+		public static void main(String[] args) {
+
+			int a, b;
+		
+			for(int i=1; i<=9; i++) {
+				a = i;
+				for(int j=1; j<=9; j++) {
+					int x = i * j;
+					System.out.print(i + "*" + j + "=" + x + " ");
+				}
+				System.out.println("");
+			}
+		}
+	}
 
 
 '''
 
+<img width="1334" height="933" alt="4번" src="https://github.com/user-attachments/assets/bf98d071-436d-43db-9007-dc57c04c2f8e" />
 
+
+aaaaaaaaaaaaaaa
+
+
+
+
+'''java
+
+	public class pi {
+
+		public static void main(String[] args) {
+        	int n = 15;
+        	double sum = 0;
+
+        	for (int i = 0; i < n; i++) {
+            	double x = 1.0 / ((2 * i + 1) * Math.pow(3, i));
+            	if (i % 2 == 0) {
+                	sum += x;
+            	} else {
+                	sum -= x;
+            	}
+        	}
+
+        	double pi = Math.sqrt(12) * sum;
+
+        	System.out.printf("%.15f%n", pi);
+    	}
+	}
+
+'''
+
+<img width="1339" height="930" alt="5번" src="https://github.com/user-attachments/assets/2674d9d2-4282-4c3c-959a-128707902926" />
+
+
+'''java
+
+	public class binomial {
+
+		public static void main(String[] args) {
+        	int n = 7;
+        	int[][] ary = new int[n][n];
+
+        	for (int i = 0; i < n; i++) {
+            	for (int j = 0; j < n; j++) {
+                	if (j == 0 || j == i) {
+                    	ary[i][j] = 1;
+                	} else if (j < i) {
+                    	ary[i][j] = ary[i - 1][j - 1] + ary[i - 1][j];
+                	}
+                	System.out.print(ary[i][j] + " ");
+            	}
+            	System.out.println();
+        	}
+    	}
+	}
+
+'''
+
+<img width="1337" height="934" alt="6번" src="https://github.com/user-attachments/assets/ce97b321-6238-4650-836b-9babdff09bfa" />
+
+
+'''java
+
+	public class grade {
+	
+		public static void main(String[] args) {
+			int rows = 25;
+	        int cols = 6;
+	        int[][] ary = new int[rows][cols];
+	
+	        for (int i = 0; i < rows; i++) {
+	            ary[i][0] = i + 1;
+	            int sum = 0;
+	
+	            for (int j = 1; j <= 4; j++) {
+	                ary[i][j] = (int) (Math.random() * 101);
+	                sum += ary[i][j];
+	            }
+	            ary[i][5] = sum;
+	
+	            for (int j = 0; j < cols; j++) {
+	                System.out.printf("%3d ", ary[i][j]);
+	            }
+	            System.out.println();
+	        }
+	    }
+	}
+	
+'''
+
+<img width="1338" height="926" alt="7번" src="https://github.com/user-attachments/assets/e329b106-9094-416a-b8c7-60b1fb55e449" />
+
+
+'''java
+	
+	public class sorting {
+	
+		public static void main(String[] args) {
+			// TODO Auto-generated method stub
+			
+			int i;
+			int j;
+			int data[] = new int[20];
+	        for (i = 0; i < 20; i++)
+	            data[i] = (int) (Math.random() * 100);
+	
+	        for (i = 0; i < data.length - 1; i++) {
+	            int minIndex = i;
+	            for (j = i + 1; j < data.length; j++) {
+	                if (data[j] < data[minIndex]) {
+	                    minIndex = j;
+	                }
+	            }
+	            int sp = data[i];
+	            data[i] = data[minIndex];
+	            data[minIndex] = sp;
+	        }
+	
+	        for (i = 0; i < 20; i++)
+	            System.out.println(data[i]);
+	    }
+	}
+
+'''
+
+<img width="1341" height="932" alt="8번" src="https://github.com/user-attachments/assets/327db714-3b36-4c1b-8f46-f2f4c8d1120b" />
 
 
 
