@@ -1,40 +1,60 @@
+package object_coding;
+
+import java.util.Random;
 import java.util.Scanner;
+
+
+
 public class histogram {
 
 	public static void main(String[] args) {
-
 		Scanner sc = new Scanner(System.in);
-		//표본 총 개수
-		int array_count = sc.nextInt();
-		//표본 최대값
-		int max_value = sc.nextInt();
-		//각 구간 크기
-		int bin_size = sc.nextInt();
 		
-		int data[] = new int[max_value/bin_size];
+		int array_count, max_value, bin_size, display_scale;
+		int index, last_max;
+
 		
-		int num = array_count;
+		System.out.print("표본 수 : ");
+		array_count = sc.nextInt();
 		
-		for (int i=0; i<data.length; i++) {
-			
-			System.out.printf("%d ~ %d   ", max_value / bin_size * i, max_value / bin_size * i + bin_size - 1);
-			
-			int count = (int)(Math.random()*array_count);
-			
-			num =- count;
-			
-				if(num >= 0) {
-					for(int j=1; j<count; j++) {
-						System.out.print("#");
-					}
-					System.out.println("");
-				} else if (num < 0) {
-					for(int j=1; j<num+count; j++) {
-						System.out.print("#");
-					}
-					System.out.println("");
-					return;
-				}
-		}	
+		System.out.print("\n표본 최댓값 : ");
+		max_value = sc.nextInt();
+		
+		System.out.print("\n범위 : ");
+		bin_size = sc.nextInt();
+		
+		System.out.print("\nscale : ");
+		display_scale = sc.nextInt();
+		
+		while(display_scale <= 0) {
+			System.out.print("\nscale : ");
+			display_scale = sc.nextInt();
+		}
+		
+		int[] array_data = new int[array_count];
+		int[] array_Dosu = new int[(max_value + bin_size - 1)/bin_size];
+		
+		int range = ( max_value / bin_size - 1 )/ bin_size;
+		
+		for (int i=0; i<array_data.length; i++) {
+			array_data[i] = (int)(Math.random()*max_value);
+			index = array_data[i] / bin_size;
+			array_Dosu[index]++;
+		}
+		
+		
+		for (int i = 0; i < (max_value + bin_size - 1)/ bin_size; i++) {
+			if (i == ( (max_value + bin_size - 1) / bin_size) - 1 ){
+				last_max = max_value;
+			} else {
+				last_max = bin_size * (i+1) -1;
+			}
+			System.out.printf("%2d ~ %-10d", 0 + bin_size * i, last_max);
+			for (int j = 0; j < array_Dosu[i] / display_scale; j++) {
+				System.out.print("#");
+			}
+			System.out.println();
+		}
 	}
+
 }
