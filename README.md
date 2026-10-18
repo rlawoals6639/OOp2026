@@ -5,6 +5,7 @@
 <details>
   <summary>1번~4번</summary>
 
+<h3>1번</h3>
 ```java
 
 	public class hash_printing{
@@ -352,7 +353,359 @@ public class histogram {
 }
 
 ```
+<img width="1222" height="877" alt="10번" src="https://github.com/user-attachments/assets/9dd5ce33-3c7c-4396-8d89-3eabc3fdd8e6" />
 
+
+```java
+package object_coding;
+import java.util.Scanner;
+
+public class Numbers {
+
+	public static void main(String[] args) {
+		class numbers {
+			int num[];
+
+			numbers(int num[]) {
+				this.num = num;
+			}
+
+
+			double getTotal() {
+				double sum = 0;
+				for (int i = 0; i < num.length; i++) {
+					sum += num[i];
+				}
+				return sum;
+			}
+
+
+			double getArithmeticMean() {
+				return getTotal()/num.length;
+			}
+
+
+			double getGeometricMean() {
+				int count = num.length, validCount = 0;
+				double logSum = 0;
+
+				for(int i = 0; i < count; i++) {
+					if(num[i] != 0) {
+						logSum += Math.log(num[i]);
+						validCount += 1;
+					}
+				}
+				return Math.exp(logSum/validCount);
+			}
+
+
+			double getHarmonicMean() {
+				double reciprocalSum = 0;
+				int count = num.length, validCount  = 0;
+
+				for(int i = 0; i < count; i++) {
+					if(num[i] != 0) {
+						reciprocalSum = reciprocalSum + (1.0 / num[i]);
+						validCount += 1;
+					}
+				}
+				return validCount / reciprocalSum;
+			}
+
+
+			double getMedian() {
+				int count = num.length, temp = 0;
+				double median = 0;
+
+				for (int i = 1; i < count; i++) {
+					if (num[i-1] > num[i]) {
+						temp = num[i-1];
+						num[i-1] = num[i];
+						num[i] = temp;
+
+						i = 0;
+					}
+				}
+				if(num.length % 2 == 0) {
+					median = (num[num.length / 2 - 1] + num[(num.length / 2)]) / 2.0;
+				} else {
+					median = num[num.length / 2];
+				}
+				return median;
+			}
+
+
+			void sort() {
+
+				int temp = 0;
+
+				for (int i = 1; i < num.length; i++) {
+					if (num[i-1] > num[i]) {
+						temp = num[i-1];
+						num[i-1] = num[i];
+						num[i] = temp;
+
+						i = 0;
+					}
+				}
+
+				System.out.printf("100 : ");
+
+				for (int i = 0; i < num.length; i++) {
+					System.out.printf("%d ", num[i]);
+				}
+
+				System.out.printf("\n\n");
+			}
+
+
+			void drawHistogram(int start, int end, int binSize, int scale) {
+				int[] samples = new int[end];
+				int[] counts = new int[(end + binSize - 1)/binSize];
+
+				int range = ( end / binSize - 1 )/ binSize, index = 0, binEnd = 0;
+
+				for (int i=0; i<samples.length; i++) {
+					samples[i] = (int)(Math.random()*end);
+					index = samples[i] / binSize;
+					counts[index]++;
+				}
+
+
+				for (int i = 0; i < (end + binSize - 1)/ binSize; i++) {
+					if (i == ( (end + binSize - 1) / binSize) - 1 ){
+						binEnd = end;
+					} else {
+						binEnd = binSize * (i+1) -1;
+					}
+					System.out.printf("%8d ~ %-10d", 0 + binSize * i, binEnd);
+					for (int j = 0; j < counts[i] / scale; j++) {
+						System.out.print("#");
+					}
+					System.out.println();
+				}
+			}
+
+
+			void display() {
+				System.out.printf("%3d :", num.length);
+
+				for(int i=0; i<num.length; i++)
+					System.out.printf("%3d ", num[i]);
+					System.out.println();
+
+			}
+
+		}
+
+		int size = 100;
+		int data[] = new int [size];
+
+
+		for (int i = 0; i < size; i++) {
+			data[i] = (int)(Math.random()*100);
+		}
+
+		numbers stats = new numbers(data);
+
+
+		stats.display();
+
+		stats.sort();
+
+		System.out.printf("산술평균 : %5.2f\n\n", stats.getArithmeticMean());
+
+		System.out.printf("기하평균 : %5.2f\n\n", stats.getGeometricMean());
+
+		System.out.printf("조화평균 : %5.2f\n\n", stats.getHarmonicMean());
+
+		System.out.printf("중앙값 : %5.2f\n\n", stats.getMedian());
+
+		System.out.println();
+
+		stats.drawHistogram(0,100,10, 1);
+
+
+	}
+}
+```
+<img width="1199" height="792" alt="11_1번" src="https://github.com/user-attachments/assets/08fb372a-3387-4150-addc-01b0b9091c6e" />
+
+
+
+```java
+package object_coding;
+import java.util.Scanner;
+
+public class calculator {
+
+	public static void main(String[] args) {
+		int opIndex = 1;
+		int simpleLength = 3;
+		double result = 0;
+
+		Scanner sc = new Scanner(System.in);
+
+		String input = sc.nextLine();
+		String[] tokens = input.split(" ");
+
+		for (String token : tokens) {
+			System.out.println(token);
+		}
+
+		if (simpleLength < tokens.length) {
+			opIndex = ((tokens[1].equals("+") || tokens[1].equals("-")) && (tokens[3].equals("*") || (tokens[3].equals("/")))) ? 3 : 1;
+		}
+
+		switch(tokens[opIndex]) {
+		case "+" -> result = add(Double.parseDouble(tokens[opIndex - 1]), Double.parseDouble(tokens[opIndex + 1]));
+		case "-" -> result = subtract(Double.parseDouble(tokens[opIndex - 1]), Double.parseDouble(tokens[opIndex + 1]));
+		case "*" -> result = multiply(Double.parseDouble(tokens[opIndex - 1]), Double.parseDouble(tokens[opIndex + 1]));
+		case "/" -> result = divide(Double.parseDouble(tokens[opIndex - 1]), Double.parseDouble(tokens[opIndex + 1]));
+		}
+
+		if (simpleLength < tokens.length) {
+			if (opIndex == 3) {
+				opIndex = 1;
+				switch(tokens[opIndex]) {
+				case "+" -> result = add(Double.parseDouble(tokens[opIndex - 1]), result);
+				case "-" -> result = subtract(Double.parseDouble(tokens[opIndex - 1]), result);
+				case "*" -> result = multiply(Double.parseDouble(tokens[opIndex - 1]), result);
+				case "/" -> result = divide(Double.parseDouble(tokens[opIndex - 1]), result);
+				}
+			} else {
+				opIndex = 3;
+				switch(tokens[opIndex]) {
+				case "+" -> result = add(result, Double.parseDouble(tokens[opIndex + 1]));
+				case "-" -> result = subtract(result, Double.parseDouble(tokens[opIndex + 1]));
+				case "*" -> result = multiply(result, Double.parseDouble(tokens[opIndex + 1]));
+				case "/" -> result = divide(result, Double.parseDouble(tokens[opIndex + 1]));
+				}
+			}
+		}
+	}
+
+	public static double add(double a, double b) {
+		double result;
+		result = a + b;
+
+		System.out.printf("%f\n", result);
+		return result;
+	}
+
+	public static double subtract(double a, double b) {
+		double result;
+		result = a - b;
+
+		System.out.printf("%f\n", result);
+		return result;
+	}
+
+	public static double multiply(double a, double b) {
+		double result;
+		result = a * b;
+
+		System.out.printf("%f\n", result);
+		return result;
+	}
+
+	public static double divide(double a, double b) {
+		double result;
+		result = a / b;
+
+		System.out.printf("%f\n", result);
+		return result;
+	}
+}
+```
+<img width="1268" height="881" alt="13번" src="https://github.com/user-attachments/assets/0f4b3f81-c265-45c8-92da-de1dde07b4b5" />
+
+
+```java
+package object_coding;
+
+import java.util.Scanner;
+import java.util.Random;
+
+public class math {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+
+		int array_count, change;
+		double ari, geo, har, median;
+
+		int value_count = 0;
+		int geo_total = 1;
+		double log_total = 0, har_total = 0, ari_total = 0;
+
+		System.out.print("랜덤 생성할 변수 수 : ");
+		array_count = sc.nextInt();
+		while(array_count <= 0) {
+			System.out.print("랜덤 생성할 변수 수 : ");
+			array_count = sc.nextInt();
+		}
+
+		int[] array_data = new int[array_count];
+
+		for(int i = 0; i < array_count + 0; i++) {
+			array_data[i] = (int)(Math.random()*100);
+			System.out.printf("%3d ", array_data[i]);
+			if( ( i + 1 ) % 25 == 0) {
+				System.out.println();
+			}
+		}
+		System.out.println();
+
+		for(int i = 0; i < array_count; i++) {
+			ari_total = ari_total + array_data[i];
+		}
+		ari = ari_total / array_data.length;
+
+		System.out.printf("산술 평균 : %f\n", ari);
+
+		for(int i = 0; i < array_count; i++) {
+			if(array_data[i] != 0) {
+				log_total += Math.log(array_data[i]);
+				value_count += 1;
+			}
+		}
+		geo = Math.exp(log_total/value_count);
+
+		System.out.printf("기하 평균 : %f\n", geo);
+
+		value_count = 0;
+		for(int i = 0; i < array_count; i++) {
+			if(array_data[i] != 0) {
+				har_total = har_total + (1.0 / array_data[i]);
+				value_count += 1;
+			}
+		}
+		har = value_count / har_total;
+		System.out.printf("조화 평균 : %f\n", har);
+
+		for (int i = 1; i < array_count; i++) {
+			if (array_data[i-1] > array_data[i]) {
+				change = array_data[i-1];
+				array_data[i-1] = array_data[i];
+				array_data[i] = change;
+
+				i = 0;
+			}
+		}
+
+		if(array_data.length % 2 == 0) {
+			median = (array_data[array_data.length / 2 - 1] + array_data[(array_data.length / 2)]) / 2.0;
+		} else {
+			median = array_data[array_data.length / 2];
+		}
+
+		System.out.printf("중간값 : %f", median);
+	}
+}
+```
+
+<img width="1365" height="887" alt="14번" src="https://github.com/user-attachments/assets/f31c59bb-899f-4805-bec7-7006627c6650" />
 
 </details>
 
