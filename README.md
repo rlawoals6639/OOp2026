@@ -5,8 +5,6 @@
 <details>
   <summary>1번~4번</summary>
 
-<h3>1번</h3>
-
 ```java
 
 	public class hash_printing{
