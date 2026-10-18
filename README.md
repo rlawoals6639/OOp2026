@@ -6,6 +6,7 @@
   <summary>1번~4번</summary>
 
 <h3>1번</h3>
+
 ```java
 
 	public class hash_printing{
@@ -46,7 +47,7 @@
 	    }
 	  }
 	}
-
+```
 
 <img width="1323" height="908" alt="1번" src="https://github.com/user-attachments/assets/2fc148ab-85d1-4fb4-b89e-1b6def9388d3" />
 
